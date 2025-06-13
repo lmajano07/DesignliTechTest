@@ -1,6 +1,7 @@
 module.exports = {
   presets: ["module:@react-native/babel-preset"],
   plugins: [
+    ["module:react-native-dotenv"],
     [
       "module-resolver",
       {
@@ -18,6 +19,7 @@ module.exports = {
         root: ["."],
         alias: {
           "@src": "./src",
+          "@config": "./src/config",
           "@domain": "./src/domain",
           "@infrastructure": "./src/infrastructure",
           "@presentation": "./src/presentation",
