@@ -1,8 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import StockPage from '@presentation/pages/StockPage';
-import AlertPage from '@presentation/pages/AlertPage';
-import WatchlistPage from '@presentation/pages/WatchlistPage';
+import StockPage from '@src/presentation/pages/Stock/StockPage';
+import AlertPage from '@src/presentation/pages/Alert/AlertPage';
+import WatchlistPage from '@src/presentation/pages/Watchlist/WatchlistPage';
 
 export type RootStackParams = {
     Alert: undefined;
