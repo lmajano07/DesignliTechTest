@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     flex: 1,
-    zIndex: 1000, // critical to render above
+    zIndex: 1000,
   },
   headerText: {
     fontSize: 18,
@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderWidth: 0.2,
     borderColor: "green",
-    zIndex: 1000, // for visibility
-    elevation: 3, // Android
+    zIndex: 1000,
+    elevation: 3,
   },
   dropdown: {
     backgroundColor: "white",
