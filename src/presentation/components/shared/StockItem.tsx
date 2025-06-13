@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 18,
     fontWeight: "600",
-    color: "#2e7d32",
+    color: "green",
   },
 });
 

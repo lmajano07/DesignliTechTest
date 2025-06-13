@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  ActivityIndicator,
+} from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -23,7 +29,11 @@ const StockPage = () => {
   }, [navigation]);
 
   if (isLoading) {
-    return <View></View>;
+    return (
+      <View style={{ flex: 1 }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
   }
 
   if (error) {
@@ -50,7 +60,7 @@ const StockPage = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "white",
     paddingVertical: 8,
     paddingHorizontal: 12,
   },
