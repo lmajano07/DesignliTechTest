@@ -26,7 +26,11 @@ const StockPage = () => {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View>
+        <View style={styles.headerRight}>
+          <IconButton
+            iconName="notification-add"
+            onPressed={() => navigation.navigate("Alert")}
+          />
           <IconButton
             iconName="remove-red-eye"
             onPressed={() => navigation.navigate("Watchlist")}
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     paddingVertical: 8,
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 18,
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginRight: 10,
+    marginRight: 16,
   },
 });
 

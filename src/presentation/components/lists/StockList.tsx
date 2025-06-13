@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: "bold",
-    marginHorizontal: 12,
+    marginHorizontal: 16,
     marginTop: 10,
     marginBottom: 8,
   },
