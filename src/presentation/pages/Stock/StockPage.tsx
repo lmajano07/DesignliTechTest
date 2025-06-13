@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { useStocks } from "./use-stocks.hook";
+
+import StockList from "@presentation/components/lists/StockList";
+import StockChart from "@presentation/components/shared/StockChart";
 import { RootStackParams } from "@presentation/routes/StackNavigator";
 
 type NavigationProp = StackNavigationProp<RootStackParams, "Stocks">;
@@ -34,17 +37,14 @@ const StockPage = () => {
   }
 
   return (
-    <View>
-      <Text>A</Text>
-      <FlatList
-        data={stocks}
-        renderItem={(item) => (
-          <View>
-            <Text>{item.item.currentPrice}</Text>
-          </View>
-        )}
-      />
-    </View>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      showsVerticalScrollIndicator={false}
+      bounces={false}
+    >
+      <StockChart stocks={stocks} />
+      <StockList stocks={stocks} />
+    </ScrollView>
   );
 };
 
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   errorText: {
-    color: "red",
     fontSize: 16,
     textAlign: "center",
   },
