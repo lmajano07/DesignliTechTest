@@ -15,6 +15,7 @@ import { useStocks } from "./use-stocks.hook";
 import StockList from "@presentation/components/lists/StockList";
 import StockChart from "@presentation/components/shared/StockChart";
 import { RootStackParams } from "@presentation/routes/StackNavigator";
+import IconButton from "@src/presentation/components/shared/IconButton";
 
 type NavigationProp = StackNavigationProp<RootStackParams, "Stocks">;
 
@@ -24,7 +25,14 @@ const StockPage = () => {
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => <View></View>,
+      headerRight: () => (
+        <View>
+          <IconButton
+            iconName="remove-red-eye"
+            onPressed={() => navigation.navigate("Watchlist")}
+          />
+        </View>
+      ),
     });
   }, [navigation]);
 
