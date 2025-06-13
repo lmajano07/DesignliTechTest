@@ -1,4 +1,4 @@
-export interface StockPriceResponse {
+export interface StockResponse {
   c: number;
   d: number;
   dp: number;

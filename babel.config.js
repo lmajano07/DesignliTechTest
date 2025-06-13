@@ -18,6 +18,8 @@ module.exports = {
         root: ["."],
         alias: {
           "@src": "./src",
+          "@domain": "./src/domain",
+          "@infrastructure": "./src/infrastructure",
           "@presentation": "./src/presentation",
         },
       },
