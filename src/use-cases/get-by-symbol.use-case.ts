@@ -2,8 +2,8 @@ import { HttpAdapter } from "@config/adapters/http";
 
 import { Stock } from "@domain/entities";
 
-import { StockResponse } from "@infrastructure/interfaces";
 import { StocksMapper } from "@infrastructure/mappers";
+import { StockResponse } from "@infrastructure/interfaces";
 
 export const getBySymbolUseCase = async (
   fetcher: HttpAdapter,

@@ -1,9 +1,11 @@
 import { HttpAdapter } from "@config/adapters/http";
+
 import { MarketStatus } from "@domain/entities";
+
 import { StocksMapper } from "@infrastructure/mappers";
 import { MarketStatusResponse } from "@infrastructure/interfaces";
 
-export const GetMarketStatusUseCases = async (
+export const getMarketStatusUseCase = async (
   fetcher: HttpAdapter
 ): Promise<MarketStatus> => {
   try {
@@ -20,7 +22,7 @@ export const GetMarketStatusUseCases = async (
 
     return currentMarketStatus;
   } catch (error) {
-    console.error("Error fetching stocks:", error);
+    console.error(`Couldn't get market status: ${error}`);
     return { market: "", isOpen: false };
   }
 };
