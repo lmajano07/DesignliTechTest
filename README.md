@@ -61,8 +61,32 @@ Please refer to (https://reactnative.dev/docs/running-on-device) for troubleshoo
 4. **Environment Setup**:
    - Ensure you've completed the [React Native - Environment Setup](https://reactnative.dev/docs/getting-started-without-a-framework) instructions up to the "Creating a new application" step before proceeding.
 
-# GENERAL DOCUMENTATION
+## Project Structure
 
-### Structure
+This project was developed using Clean Architecture principles, separating business logic, infrastructure, and UI concerns. This makes it scalable, testable, and easy to maintain. Kept it simple because of the size of the project.
 
-Applied clean architecture principles, using a simpler approach due to the size of the project.
+### Domain
+
+This is the core of the application, where entities are stored. It contains pure TypeScript entities
+
+Reusable across platforms (web, backend, CLI, etc.).
+
+### Use cases
+
+This layer encapsulates application-specific business rules. These interact with interfaces, not concrete implementations; respecting the Dependency Inversion Principle.
+
+### Infrastructure
+
+Contains framework specific implementations like APIs, mappers, and repository interfaces.
+
+### Config
+
+Contains adapter logic, such as the HTTP adapter for calling external services.
+
+### Actions
+
+Serves as a bridge between UI and use cases, often used to dispatch logic into a store or hook layer.
+
+### Presentation
+
+This is the UI layer, composed of: components, pages, routes and store. Doing this keeps the UI logic modular and decoupled from business logic and state management.
